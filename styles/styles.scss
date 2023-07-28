@@ -104,9 +104,6 @@ body {
   color: $white;
   background-color: $black;
   margin: 0%;
-
-  //   stop page moving on scroll
-  overflow: hidden;
 }
 
 .flex-container {
@@ -182,6 +179,11 @@ button.button-list {
 
 //  desktop fonts etc
 @media screen and (min-width: 800px) {
+  body {
+    //   stop page moving on scroll
+    overflow: hidden;
+  }
+
   h2 {
     font-size: 1.3vw;
   }
@@ -210,6 +212,7 @@ button.button-list {
 
   a.project-actions-link {
     margin: 0 1vw 0 0;
+    color: $accent;
   }
 
   a.project-actions-link:hover,
@@ -305,7 +308,7 @@ ul {
   padding-right: 0;
   padding-left: 0;
   padding-top: 0;
-  margin-top: 0;
+  margin-top: 4rem;
 }
 
 .header-container-mobile {
@@ -322,7 +325,8 @@ ul {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 1.67vw;
   padding: 2vw 0vw 2vw 0vw;
-  align-items: center;
+  align-content: center;
+  height: 2vh;
 }
 
 .header-marquee-desktop {
@@ -333,6 +337,8 @@ ul {
   grid-column: span 2;
   grid-column-end: auto;
   white-space: nowrap;
+  position: relative;
+  top: 1.8rem;
 }
 
 /* size the icons */
@@ -353,17 +359,20 @@ ul {
   button {
     grid-column: 4;
     @include body;
-    font-size: 5vw;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 0 0 0;
+    margin: 2rem 0 5rem 0;
     border: none;
     // border: solid 1px $accent;
     color: $accent;
     background-color: transparent;
     text-align: end;
 
-    padding: 1vw 2vw;
+    padding: 0.5vw 0.8vw;
     border-radius: 2vw;
+    z-index: 999999;
+    position: fixed;
+    top: 0vh;
   }
 
   // button:hover {
@@ -387,14 +396,19 @@ ul {
 
 // poput menu
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .overlay {
   overflow: hidden;
   width: 100vw;
   height: auto;
   position: fixed;
-  transition: 1s ease-in-out;
+  transition: 1s ease;
   right: -100vw;
-  top: 0;
+  top: 10px;
   bottom: 0;
   background-color: $black;
   opacity: 1;
@@ -403,17 +417,17 @@ ul {
 }
 
 .overlay:target {
-  visibility: visible;
+  // visibility: visible;
   opacity: 1;
   right: 0;
   top: 0;
   bottom: 0;
   left: 0;
-  transition: 1s ease-in-out;
+  transition: 1s ease;
 }
 
 .popup-menu {
-  margin: 2vw;
+  margin: 4vh 2vw 2vh 2vw;
   padding: 0 3vw;
   background-color: $black;
 
@@ -429,6 +443,8 @@ ul {
   font-weight: 400;
   line-height: 125%;
   letter-spacing: 0.01em;
+  display: flex;
+  flex-direction: column;
 }
 
 .popup-menu > .close {
@@ -454,17 +470,21 @@ ul {
 
   a.menu {
     @include body;
-    font-size: 5vw;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 0 0 0;
+    // margin: 0 0 0 0;
     border: solid 1px $accent;
     color: $accent;
     background-color: transparent;
     text-align: end;
     text-decoration: none;
 
-    padding: 1vw 2vw;
+    padding: 0.5vw 0.9vh;
     border-radius: 2vw;
+    z-index: 99999;
+    position: fixed;
+    top: 1vh;
+    right: 3vw;
   }
   a.menu:hover {
     background-color: $accent;
@@ -477,6 +497,95 @@ ul {
   border: none;
   left: 75%;
   top: 2vw;
+}
+
+// div.input-feilds {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   align-items: flex-end;
+// }
+
+// .contact-form-container {
+//   display: flex;
+//   flex-grow: 1;
+//   position: relative;
+//   overflow-y: scroll;
+//   form.contact-form {
+//     .input-feilds,
+//     .input-feilds-multiple {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: flex-end;
+//       flex-wrap: nowrap;
+//     }
+//   }
+// }
+// .contact-form {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: space-between;
+// }
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  .input-feild,
+  .project-type,
+  .budget-expectation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    font-family: "Messina Sans", monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 1rem;
+    background-color: transparent;
+    color: rgb(69, 69, 69);
+    opacity: 1;
+  }
+  .name-email,
+  .budget-timeline-etc {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: center;
+  }
+  input {
+    padding: 0.6rem 0.2rem;
+    margin: 0.6rem 0;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-style: uppercase;
+    line-height: 1rem;
+    background-color: transparent;
+    color: rgb(69, 69, 69);
+  }
+  .project-buttons {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    input {
+      display: none;
+    }
+    span {
+      border: 1px solid $accent;
+      border-radius: 10px;
+      padding: 0.6rem 0.2rem;
+      margin: 1rem;
+      color: $accent;
+    }
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -493,7 +602,7 @@ ul {
   .overlay:target {
     transition: 1s ease-in-out;
     visibility: visible;
-    opacity: 0.5;
+    opacity: 0.9;
     right: 10vw;
     top: 0;
     bottom: 0;
@@ -504,7 +613,14 @@ ul {
     line-height: 125%;
     letter-spacing: 0.01em;
   }
+  div#popout-menu.overlay {
+    transition: all 1s ease;
+  }
+  div#popout-menu.overlay.hidden {
+    transition: all 1s ease;
+  }
 }
+
 //end popout menu
 
 /* styling the header title */
@@ -537,6 +653,9 @@ div.header-title {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     padding: 0;
+    height: 2vh;
+    // top: 2vh;
+    // position: relative;
   }
 
   div.header-button-mobile {
@@ -578,6 +697,11 @@ div.header-title {
   }
 
   /* size the icons desktop */
+  .icons {
+    position: relative;
+    top: 2.2rem;
+  }
+
   .icons img {
     min-width: 1.7vw;
     max-width: 2vw;
@@ -585,7 +709,7 @@ div.header-title {
 
   .popup-menu {
     font-size: 1.5vw;
-    margin-top: 0;
+    // margin-top: 0;
   }
 
   .popup-menu button a.menu {
@@ -637,6 +761,8 @@ span.header-marquee-separator {
     overflow: hidden;
     text-align: initial;
     white-space: nowrap;
+    position: relative;
+    top: 1.8rem;
   }
 
   .header-marquee-desktop:hover {
@@ -932,13 +1058,13 @@ section.col3 {
       background-color: transparent;
     }
 
-    a.trigger {
+    a.trigger img {
       width: 1.1vw;
-      position: absolute;
-      bottom: 0;
+      position: fixed;
+      bottom: 2vh;
       z-index: 20;
 
-      margin-bottom: 2vw;
+      margin-bottom: 1vh;
       visibility: visible;
     }
   }
@@ -1158,4 +1284,15 @@ ul div.mob-footer-4 {
     grid-column-start: 5;
     grid-column-end: 7;
   }
+}
+
+.overlay.hidden {
+  display: none;
+  transform: translateY(-50%);
+  opacity: 0; /*  opacity property for fade effect */
+  transition: all 0.3s ease; /*  transition for opacity */
+}
+
+.hidden {
+  transition: all 0.3s linear;
 }

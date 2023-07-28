@@ -36,7 +36,6 @@ body {
   color: #fffef4;
   background-color: #000000;
   margin: 0%;
-  overflow: hidden;
 }
 
 .flex-container {
@@ -132,6 +131,9 @@ button.button-list .accordian-trigger img {
 }
 
 @media screen and (min-width: 800px) {
+  body {
+    overflow: hidden;
+  }
   h2 {
     font-size: 1.3vw;
   }
@@ -155,6 +157,7 @@ button.button-list .accordian-trigger img {
   }
   a.project-actions-link {
     margin: 0 1vw 0 0;
+    color: #00ff6a;
   }
   a.project-actions-link:hover,
   footer p:not(.muted):hover {
@@ -231,7 +234,7 @@ ul li {
   padding-right: 0;
   padding-left: 0;
   padding-top: 0;
-  margin-top: 0;
+  margin-top: 4rem;
 }
 
 .header-container-mobile {
@@ -247,7 +250,8 @@ ul li {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 1.67vw;
   padding: 2vw 0vw 2vw 0vw;
-  align-items: center;
+  align-content: center;
+  height: 2vh;
 }
 
 .header-marquee-desktop {
@@ -258,6 +262,8 @@ ul li {
   grid-column: span 2;
   grid-column-end: auto;
   white-space: nowrap;
+  position: relative;
+  top: 1.8rem;
 }
 
 /* size the icons */
@@ -281,15 +287,18 @@ ul li {
   line-height: 140%;
   letter-spacing: 0.01em;
   color: #fffef4;
-  font-size: 5vw;
+  font-size: 1rem;
   font-weight: 700;
-  margin: 0 0 0 0;
+  margin: 2rem 0 5rem 0;
   border: none;
   color: #00ff6a;
   background-color: transparent;
   text-align: end;
-  padding: 1vw 2vw;
+  padding: 0.5vw 0.8vw;
   border-radius: 2vw;
+  z-index: 999999;
+  position: fixed;
+  top: 0vh;
 }
 .header-button-mobile a.menu {
   color: #00ff6a;
@@ -303,14 +312,19 @@ ul li {
 /*------------------------------------
  *   NAV items and popout menu
  *------------------------------------*/
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .overlay {
   overflow: hidden;
   width: 100vw;
   height: auto;
   position: fixed;
-  transition: 1s ease-in-out;
+  transition: 1s ease;
   right: -100vw;
-  top: 0;
+  top: 10px;
   bottom: 0;
   background-color: #000000;
   opacity: 1;
@@ -318,17 +332,16 @@ ul li {
 }
 
 .overlay:target {
-  visibility: visible;
   opacity: 1;
   right: 0;
   top: 0;
   bottom: 0;
   left: 0;
-  transition: 1s ease-in-out;
+  transition: 1s ease;
 }
 
 .popup-menu {
-  margin: 2vw;
+  margin: 4vh 2vw 2vh 2vw;
   padding: 0 3vw;
   background-color: #000000;
   height: 100vh;
@@ -341,6 +354,8 @@ ul li {
   font-weight: 400;
   line-height: 125%;
   letter-spacing: 0.01em;
+  display: flex;
+  flex-direction: column;
 }
 
 .popup-menu > .close {
@@ -371,16 +386,19 @@ ul li {
   line-height: 140%;
   letter-spacing: 0.01em;
   color: #fffef4;
-  font-size: 5vw;
+  font-size: 1rem;
   font-weight: 700;
-  margin: 0 0 0 0;
   border: solid 1px #00ff6a;
   color: #00ff6a;
   background-color: transparent;
   text-align: end;
   text-decoration: none;
-  padding: 1vw 2vw;
+  padding: 0.5vw 0.9vh;
   border-radius: 2vw;
+  z-index: 99999;
+  position: fixed;
+  top: 1vh;
+  right: 3vw;
 }
 .header-button-mobile button a.menu:hover,
 .popup-menu button a.menu:hover {
@@ -395,6 +413,65 @@ ul li {
   top: 2vw;
 }
 
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.contact-form-container .input-feild,
+.contact-form-container .project-type,
+.contact-form-container .budget-expectation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  font-family: "Messina Sans", monospace;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 1rem;
+  background-color: transparent;
+  color: rgb(69, 69, 69);
+  opacity: 1;
+}
+.contact-form-container .name-email,
+.contact-form-container .budget-timeline-etc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: center;
+}
+.contact-form-container input {
+  padding: 0.6rem 0.2rem;
+  margin: 0.6rem 0;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-style: uppercase;
+  line-height: 1rem;
+  background-color: transparent;
+  color: rgb(69, 69, 69);
+}
+.contact-form-container .project-buttons {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.contact-form-container .project-buttons input {
+  display: none;
+}
+.contact-form-container .project-buttons span {
+  border: 1px solid #00ff6a;
+  border-radius: 10px;
+  padding: 0.6rem 0.2rem;
+  margin: 1rem;
+  color: #00ff6a;
+}
+
 @media screen and (min-width: 800px) {
   .overlay {
     height: auto;
@@ -407,7 +484,7 @@ ul li {
   .overlay:target {
     transition: 1s ease-in-out;
     visibility: visible;
-    opacity: 0.5;
+    opacity: 0.9;
     right: 10vw;
     top: 0;
     bottom: 0;
@@ -417,6 +494,12 @@ ul li {
     font-size: 1vw;
     line-height: 125%;
     letter-spacing: 0.01em;
+  }
+  div#popout-menu.overlay {
+    transition: all 1s ease;
+  }
+  div#popout-menu.overlay.hidden {
+    transition: all 1s ease;
   }
 }
 /* styling the header title */
@@ -445,6 +528,7 @@ div.header-title {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     padding: 0;
+    height: 2vh;
   }
   div.header-button-mobile {
     grid-column: 8;
@@ -476,13 +560,16 @@ div.header-title {
     background-color: #00ff6a;
   }
   /* size the icons desktop */
+  .icons {
+    position: relative;
+    top: 2.2rem;
+  }
   .icons img {
     min-width: 1.7vw;
     max-width: 2vw;
   }
   .popup-menu {
     font-size: 1.5vw;
-    margin-top: 0;
   }
   .popup-menu button a.menu {
     font-size: 1.5vw;
@@ -531,6 +618,8 @@ span.header-marquee-separator {
     overflow: hidden;
     text-align: initial;
     white-space: nowrap;
+    position: relative;
+    top: 1.8rem;
   }
   .header-marquee-desktop:hover {
     filter: none;
@@ -770,12 +859,12 @@ section.col3 {
   div.gallery-open {
     background-color: transparent;
   }
-  a.trigger {
+  a.trigger img {
     width: 1.1vw;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 2vh;
     z-index: 20;
-    margin-bottom: 2vw;
+    margin-bottom: 1vh;
     visibility: visible;
   }
 }
@@ -961,4 +1050,14 @@ ul div.mob-footer-4 {
     grid-column-start: 5;
     grid-column-end: 7;
   }
+}
+.overlay.hidden {
+  display: none;
+  transform: translateY(-50%);
+  opacity: 0; /*  opacity property for fade effect */
+  transition: all 0.3s ease; /*  transition for opacity */
+}
+
+.hidden {
+  transition: all 0.3s linear;
 }/*# sourceMappingURL=styles.css.map */

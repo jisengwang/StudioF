@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/styles.css" />
+    <script type="module" src="menu.js"></script>
     <title>Studio Frieght Clone</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
   </head>
   <body>
     <div class="flex-container">
@@ -76,12 +78,14 @@
           <!-- Pop-out menu  -->
 
           <div class="header-button-mobile">
-            <button><a class="menu" href="#popup-menu">CONTACT</a></button>
+            <button>
+              <a class="menu" href="#popup-menu" id="toggleButton">CONTACT</a>
+            </button>
           </div>
 
           <div id="popup-menu" class="overlay">
             <div class="popup-menu">
-              <button><a class="menu" href="#">CLOSE</a></button>
+              <!-- <button><a class="menu" href="#">CLOSE</a></button> -->
 
               <div class="separator-mobile">
                 <div class="separator-icon">
@@ -136,6 +140,153 @@
                     don't hesitate to reach out.
                   </p>
                 </div>
+
+                <div class="contact-form-container">
+                  <!-- FORM IN MENU  -->
+                  <div class="name-email">
+                    <div class="input-feild">
+                      <div>
+                        <label for="name">YOUR NAME *</label>
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          id="name"
+                          name="fullName"
+                          placeholder="TYPE HERE"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-feild">
+                      <div><label for="email">YOUR EMAIL *</label></div>
+
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="TYPE HERE"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-feilds">
+                    <div class="project-type">
+                      <label for="project-types">PROJECT TYPE *</label>
+                    </div>
+
+                    <label class="project-buttons">
+                      <input
+                        id="Brand"
+                        type="checkbox"
+                        name="project-type"
+                        value="Brand"
+                      />
+                      <span>BRAND</span>
+                    </label>
+                    <label class="project-buttons">
+                      <input
+                        id="Website"
+                        type="checkbox"
+                        name="project-type"
+                        value="Website"
+                      />
+                      <span>WEBSITE</span>
+                    </label>
+                    <label class="project-buttons">
+                      <input
+                        id="Art-Direction"
+                        type="checkbox"
+                        name="project-type"
+                        value="Art-Direction"
+                      />
+                      <span>ART DIRECTION</span>
+                    </label>
+                    <label class="project-buttons">
+                      <input
+                        id="campaign"
+                        type="checkbox"
+                        name="project-type"
+                        value="campaign"
+                      />
+                      <span>CAMPAIGN</span>
+                    </label>
+                    <label class="project-buttons">
+                      <input
+                        id="other"
+                        type="checkbox"
+                        name="project-type"
+                        value="other"
+                      />
+                      <span>OTHER</span>
+                    </label>
+                  </div>
+                  <div class="input-block">
+                    <div>
+                      <label for="message">PROJECT DESCRIPTION *</label>
+                    </div>
+                    <textarea
+                      type="text"
+                      id="message"
+                      rows="5"
+                      cols="5"
+                      name="message"
+                      placeholder="Details About Your Project..."
+                    ></textarea>
+                  </div>
+                  <div class="budget-timeline-etc">
+                    <div class="input-dropdown">
+                      <div class="budget-expectation">
+                        <label for="budget-expectation" class="dropdown"
+                          >BUDGET EXPECTATION</label
+                        >
+                      </div>
+
+                      <select class="dropdown-content">
+                        <option value="">SELECT ONE</option>
+                        <option value="1">UNDER 50K</option>
+                        <option value="2">OVER 50K</option>
+                        <option value="3">UNDER 100K</option>
+                      </select>
+                    </div>
+                    <div class="input-feild">
+                      <div>
+                        <label for="timeline">TIMELINE EXPECTATION*</label>
+                      </div>
+                      <input
+                        type="text"
+                        id="timeline"
+                        name="timeline"
+                        placeholder="TYPE HERE"
+                      />
+                    </div>
+                    <div class="input-feild">
+                      <div>
+                        <label for="find-us">HOW YOU FOUND US *</label>
+                      </div>
+                      <input
+                        type="text"
+                        id="find-us"
+                        name="find-us"
+                        placeholder="TYPE HERE"
+                      />
+                    </div>
+
+                    <div class="input-feild">
+                      <div>
+                        <label for="movie">FAVOURITE MOVIE OR ALBUM</label>
+                      </div>
+                      <input
+                        type="text"
+                        id="movie"
+                        name="movie"
+                        placeholder="TYPE HERE"
+                      />
+                    </div>
+                  </div>
+                  <button class="ShipIt" type="submit">SHIP IT</button>
+                </div>
+
+                <!-- ********END FORM IN MENU*********  -->
               </div>
             </div>
           </div>
@@ -143,31 +294,33 @@
         </nav>
 
         <!-- start of header title  -->
-        <div class="separator-mobile">
-          <div class="separator-icon">
-            <img src="./assets/plus-grey.svg" alt="plus" />
+        <div class="header-main">
+          <div class="separator-mobile">
+            <div class="separator-icon">
+              <img src="./assets/plus-grey.svg" alt="plus" />
+            </div>
+
+            <span class="separator-line"></span>
+
+            <div class="separator-icon">
+              <img src="./assets/plus-grey.svg" alt="plus" />
+            </div>
           </div>
 
-          <span class="separator-line"></span>
-
-          <div class="separator-icon">
-            <img src="./assets/plus-grey.svg" alt="plus" />
-          </div>
-        </div>
-
-        <div class="header-title">
-          <h1>STUDIO FREIGHT</h1>
-        </div>
-
-        <div class="separator-mobile">
-          <div class="separator-icon">
-            <img src="./assets/plus-grey.svg" alt="plus" />
+          <div class="header-title">
+            <h1>STUDIO FREIGHT</h1>
           </div>
 
-          <span class="separator-line"></span>
+          <div class="separator-mobile">
+            <div class="separator-icon">
+              <img src="./assets/plus-grey.svg" alt="plus" />
+            </div>
 
-          <div class="separator-icon">
-            <img src="./assets/plus-grey.svg" alt="plus" />
+            <span class="separator-line"></span>
+
+            <div class="separator-icon">
+              <img src="./assets/plus-grey.svg" alt="plus" />
+            </div>
           </div>
         </div>
 
