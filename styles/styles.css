@@ -234,7 +234,7 @@ ul li {
   padding-right: 0;
   padding-left: 0;
   padding-top: 0;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 .header-container-mobile {
@@ -1060,4 +1060,36 @@ ul div.mob-footer-4 {
 
 .hidden {
   transition: all 0.3s linear;
+}
+
+/*---------*CUSTOM CURSOR 
+--------------------------------------*/
+body * {
+  cursor: none;
+}
+body .roundCursor {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5568627451);
+  transition-timing-function: ease-out;
+  transition: width 0.8s, height 0.8s, background-color 0.8s;
+  position: absolute;
+  z-index: 9999999999;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 1;
+  display: visible;
+}
+body .roundCursor.active {
+  height: 50px;
+  width: 50px;
+  background-color: #8e8e8e;
+  opacity: 0.4;
+  display: visible;
+}
+@media (hover: none) {
+  body .roundCursor {
+    display: none;
+  }
 }/*# sourceMappingURL=styles.css.map */
