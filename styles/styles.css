@@ -508,6 +508,7 @@ div.header-title {
   width: 96vw;
   text-shadow: 0 0 20px;
   margin: 2.6vw 0 2.6vw 0;
+  padding: 0.2rem 0 0.2rem 0;
 }
 
 @media screen and (max-width: 799px) {
@@ -528,7 +529,7 @@ div.header-title {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     padding: 0;
-    height: 2vh;
+    height: 4vh;
   }
   div.header-button-mobile {
     grid-column: 8;
@@ -832,14 +833,14 @@ section.col3 {
   }
   img.full {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     grid-column: span 2;
     width: 100%;
     max-height: 100%;
   }
   img.half {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     grid-column: span 1;
     width: 100%;
     max-height: 100%;
@@ -894,7 +895,11 @@ div.image-mobile-3::after,
 div.image-mobile-1::after {
   display: block;
   position: relative;
-  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(0, 0, 0));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgb(0, 0, 0)
+  );
   margin-top: -150px;
   margin-left: -2vw;
   height: 150px;
@@ -942,7 +947,7 @@ div.image-mobile-3 {
   grid-template-rows: auto;
   row-gap: 4.8vw;
   -moz-column-gap: 4vw;
-       column-gap: 4vw;
+  column-gap: 4vw;
 }
 
 .footer-body-mob {
@@ -1092,4 +1097,4 @@ body .roundCursor.active {
   body .roundCursor {
     display: none;
   }
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
