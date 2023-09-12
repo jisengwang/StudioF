@@ -514,7 +514,7 @@ ul li {
   .overlay:target {
     transition: 1s ease-in-out;
     visibility: visible;
-    opacity: 0.9;
+    opacity: 1;
     right: 10vw;
     top: 0;
     bottom: 0;
@@ -1085,11 +1085,18 @@ ul div.mob-footer-4 {
   display: none;
   transform: translateY(-50%);
   opacity: 0; /*  opacity property for fade effect */
-  transition: all 0.3s ease; /*  transition for opacity */
+  transition: transform 0.3s ease; /*  transition for opacity */
 }
 
+/* Default state (when element is not hidden) */
+#popup-menu {
+  transform: translateY(0);
+  transition: transform 0.3s linear;
+}
+
+/* Apply hidden styles when the element has the hidden class */
 .hidden {
-  transition: all 0.3s linear;
+  display: none;
 }
 
 /*---------*CUSTOM CURSOR 

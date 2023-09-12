@@ -412,7 +412,6 @@ ul {
   bottom: 0;
   background-color: $black;
   opacity: 1;
-
   z-index: 99;
 }
 
@@ -430,14 +429,11 @@ ul {
   margin: 4vh 2vw 2vh 2vw;
   padding: 0 3vw;
   background-color: $black;
-
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-
   position: relative;
   transition: 1s ease-in-out;
-
   font-size: 4.27vw;
   font-style: normal;
   font-weight: 400;
@@ -478,7 +474,6 @@ ul {
     background-color: transparent;
     text-align: end;
     text-decoration: none;
-
     padding: 0.5vw 0.9vh;
     border-radius: 2vw;
     z-index: 99999;
@@ -486,6 +481,7 @@ ul {
     top: 1vh;
     right: 3vw;
   }
+
   a.menu:hover {
     background-color: $accent;
     color: $black;
@@ -498,35 +494,6 @@ ul {
   left: 75%;
   top: 2vw;
 }
-
-// div.input-feilds {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: flex-end;
-// }
-
-// .contact-form-container {
-//   display: flex;
-//   flex-grow: 1;
-//   position: relative;
-//   overflow-y: scroll;
-//   form.contact-form {
-//     .input-feilds,
-//     .input-feilds-multiple {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: flex-end;
-//       flex-wrap: nowrap;
-//     }
-//   }
-// }
-// .contact-form {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   align-items: space-between;
-// }
 
 .contact-form-container {
   display: flex;
@@ -639,20 +606,23 @@ ul {
   .overlay:target {
     transition: 1s ease-in-out;
     visibility: visible;
-    opacity: 0.9;
+    opacity: 1;
     right: 10vw;
     top: 0;
     bottom: 0;
     left: 50%;
   }
+
   .popup-menu p {
     font-size: 1vw;
     line-height: 125%;
     letter-spacing: 0.01em;
   }
+
   div#popout-menu.overlay {
     transition: all 1s ease;
   }
+
   div#popout-menu.overlay.hidden {
     transition: all 1s ease;
   }
@@ -1327,11 +1297,18 @@ ul div.mob-footer-4 {
   display: none;
   transform: translateY(-50%);
   opacity: 0; /*  opacity property for fade effect */
-  transition: all 0.3s ease; /*  transition for opacity */
+  transition: transform 0.3s ease; /*  transition for opacity */
 }
 
+/* Default state (when element is not hidden) */
+#popup-menu {
+  transform: translateY(0);
+  transition: transform 0.3s linear;
+}
+
+/* Apply hidden styles when the element has the hidden class */
 .hidden {
-  transition: all 0.3s linear;
+  display: none;
 }
 /*---------*CUSTOM CURSOR 
 --------------------------------------*/
