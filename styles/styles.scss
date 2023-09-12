@@ -533,6 +533,7 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   align-items: space-between;
+
   .input-feild,
   .project-type,
   .budget-expectation {
@@ -553,13 +554,13 @@ ul {
   }
   .name-email,
   .budget-timeline-etc {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: stretch;
     align-items: center;
   }
-  input {
+  input,
+  .dropdown-content {
     padding: 0.6rem 0.2rem;
     margin: 0.6rem 0;
     border: 1px solid white;
@@ -569,8 +570,17 @@ ul {
     background-color: transparent;
     color: rgb(69, 69, 69);
   }
+
+  .budget-expectation {
+    width: 100%;
+  }
+
+  .projectButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .project-buttons {
-    margin: 1rem;
+    margin: 1;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -579,12 +589,39 @@ ul {
       display: none;
     }
     span {
-      border: 1px solid $accent;
-      border-radius: 10px;
-      padding: 0.6rem 0.2rem;
-      margin: 1rem;
-      color: $accent;
+      border: 1px solid $white;
+      border-radius: 20px;
+      padding: 0.6rem 0.6rem;
+      margin: 0.5rem;
+      color: $white;
+      font-size: 1rem;
+      font-family: "Neue Montreal", sans-serif;
     }
+    span:hover {
+      border: 1px solid $accent;
+      color: $accent;
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+  }
+}
+
+.input-block {
+  div {
+    label {
+      font-family: "Messina Sans", monospace;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 1rem;
+      color: rgb(69, 69, 69);
+    }
+  }
+  textarea {
+    width: 100%;
+    height: 14vh;
+    border-radius: 10px;
+    background-color: rgb(69, 69, 69);
+    color: $white;
   }
 }
 

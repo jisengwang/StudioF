@@ -149,14 +149,12 @@
                       <div>
                         <label for="name">YOUR NAME *</label>
                       </div>
-                      <div>
-                        <input
-                          type="text"
-                          id="name"
-                          name="fullName"
-                          placeholder="TYPE HERE"
-                        />
-                      </div>
+                      <input
+                        type="text"
+                        id="name"
+                        name="fullName"
+                        placeholder="TYPE HERE"
+                      />
                     </div>
                     <div class="input-feild">
                       <div><label for="email">YOUR EMAIL *</label></div>
@@ -174,52 +172,53 @@
                     <div class="project-type">
                       <label for="project-types">PROJECT TYPE *</label>
                     </div>
-
-                    <label class="project-buttons">
-                      <input
-                        id="Brand"
-                        type="checkbox"
-                        name="project-type"
-                        value="Brand"
-                      />
-                      <span>BRAND</span>
-                    </label>
-                    <label class="project-buttons">
-                      <input
-                        id="Website"
-                        type="checkbox"
-                        name="project-type"
-                        value="Website"
-                      />
-                      <span>WEBSITE</span>
-                    </label>
-                    <label class="project-buttons">
-                      <input
-                        id="Art-Direction"
-                        type="checkbox"
-                        name="project-type"
-                        value="Art-Direction"
-                      />
-                      <span>ART DIRECTION</span>
-                    </label>
-                    <label class="project-buttons">
-                      <input
-                        id="campaign"
-                        type="checkbox"
-                        name="project-type"
-                        value="campaign"
-                      />
-                      <span>CAMPAIGN</span>
-                    </label>
-                    <label class="project-buttons">
-                      <input
-                        id="other"
-                        type="checkbox"
-                        name="project-type"
-                        value="other"
-                      />
-                      <span>OTHER</span>
-                    </label>
+                    <div class="projectButtonsContainer">
+                      <label class="project-buttons">
+                        <input
+                          id="Brand"
+                          type="checkbox"
+                          name="project-type"
+                          value="Brand"
+                        />
+                        <span>BRAND</span>
+                      </label>
+                      <label class="project-buttons">
+                        <input
+                          id="Website"
+                          type="checkbox"
+                          name="project-type"
+                          value="Website"
+                        />
+                        <span>WEBSITE</span>
+                      </label>
+                      <label class="project-buttons">
+                        <input
+                          id="Art-Direction"
+                          type="checkbox"
+                          name="project-type"
+                          value="Art-Direction"
+                        />
+                        <span>ART DIRECTION</span>
+                      </label>
+                      <label class="project-buttons">
+                        <input
+                          id="campaign"
+                          type="checkbox"
+                          name="project-type"
+                          value="campaign"
+                        />
+                        <span>CAMPAIGN</span>
+                      </label>
+                      <label class="project-buttons">
+                        <input
+                          id="other"
+                          type="checkbox"
+                          name="project-type"
+                          value="other"
+                        />
+                        <span>OTHER</span>
+                      </label>
+                    </div>
                   </div>
                   <div class="input-block">
                     <div>
@@ -239,15 +238,13 @@
                       <div class="budget-expectation">
                         <label for="budget-expectation" class="dropdown"
                           >BUDGET EXPECTATION</label
-                        >
+                        ><select class="dropdown-content">
+                          <option value="">SELECT ONE</option>
+                          <option value="1">UNDER 50K</option>
+                          <option value="2">OVER 50K</option>
+                          <option value="3">UNDER 100K</option>
+                        </select>
                       </div>
-
-                      <select class="dropdown-content">
-                        <option value="">SELECT ONE</option>
-                        <option value="1">UNDER 50K</option>
-                        <option value="2">OVER 50K</option>
-                        <option value="3">UNDER 100K</option>
-                      </select>
                     </div>
                     <div class="input-feild">
                       <div>
