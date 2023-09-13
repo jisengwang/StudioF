@@ -306,26 +306,31 @@ ul li {
  *   NAV items and popout menu
  *------------------------------------*/
 .popup-menu {
+  width: 50vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 10;
   position: absolute;
-  top: 50px;
-  right: -200px;
-  background-color: #fff;
+  top: -2vh;
+  right: 0;
+  background-color: #000000;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: right 0.5s ease-in-out;
+  padding: 4rem 1rem 0 1rem;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+  margin-right: -1rem;
 }
 
-.popup-menu ul {
-  list-style-type: none;
-  padding: 0;
+.popup-menu p {
+  font-size: 1vw;
+  line-height: 125%;
+  letter-spacing: 0.01em;
 }
 
-.popup-menu li {
-  margin-bottom: 10px;
-}
-
-.popup-menu.hidden {
-  right: -300px;
+div.popup-menu.hidden {
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(100%);
 }
 
 button#toggleButton {
@@ -344,17 +349,124 @@ button#toggleButton {
   color: #00ff6a;
   background-color: transparent;
   text-align: center;
+  line-height: 100%;
   padding: 0.5vw 0.8vw;
   border-radius: 1vw;
   z-index: 999999;
+  transition: all 0.3s ease;
 }
 
-button#toggleButton.hidden {
-  background-color: #dc3545;
+button#toggleButton:hover {
+  background-color: #00ff6a;
+  color: #000000;
+  transition: all 0.3s ease;
 }
 
-button#closeButton {
-  background-color: #dc3545;
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.contact-form-container .input-feild,
+.contact-form-container .project-type,
+.contact-form-container .budget-expectation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.2rem;
+  margin-top: 0.5rem;
+  font-family: "Messina Sans", monospace;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 1rem;
+  background-color: transparent;
+  color: rgb(69, 69, 69);
+  opacity: 1;
+}
+.contact-form-container .name-email,
+.contact-form-container .budget-timeline-etc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: stretch;
+  align-items: center;
+}
+.contact-form-container input,
+.contact-form-container .dropdown-content {
+  padding: 0.6rem 0.2rem;
+  margin: 0.6rem 0rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-style: uppercase;
+  line-height: 1rem;
+  background-color: transparent;
+  color: rgb(69, 69, 69);
+}
+.contact-form-container .budget-expectation {
+  width: 100%;
+}
+.contact-form-container .projectButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact-form-container .project-buttons {
+  margin: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.contact-form-container .project-buttons input {
+  display: none;
+}
+.contact-form-container .project-buttons span {
+  border: 1px solid #fffef4;
+  border-radius: 20px;
+  padding: 0.6rem 0.6rem;
+  margin: 0.5rem;
+  color: #fffef4;
+  font-size: 1rem;
+  font-family: "Neue Montreal", sans-serif;
+}
+.contact-form-container .project-buttons span:hover {
+  border: 1px solid #00ff6a;
+  color: #00ff6a;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.input-block div label {
+  font-family: "Messina Sans", monospace;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 1rem;
+  color: rgb(69, 69, 69);
+}
+.input-block textarea {
+  width: 100%;
+  height: 14vh;
+  border-radius: 10px;
+  background-color: rgb(69, 69, 69);
+  color: #fffef4;
+}
+
+button.ShipIt {
+  width: 100%;
+  border: solid 1px #00ff6a;
+  color: #00ff6a;
+  background-color: transparent;
+  text-align: center;
+  grid-column: span 2;
+  border-radius: 10px;
+  padding: 0.6rem 0.6rem;
+  margin: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+button.ShipIt:hover {
+  background-color: #00ff6a;
+  color: #000000;
+  transition: all 0.3s ease;
 }
 
 /* styling the header title */
@@ -392,7 +504,7 @@ div.header-title {
     font-size: 1.1vw;
     padding: 0.2777777778vw 0.5555555556vw;
     border-radius: 0.6vw;
-    color: #00ff6a;
+    color: var(#00ff6a);
     background-color: transparent;
     margin-left: 3vw;
   }
@@ -427,6 +539,28 @@ div.header-title {
     padding: 0.5vw 1.5vw;
     border-radius: 1vw;
     line-height: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .popup-menu {
+    width: 101vw;
+  }
+  .header-top-mobile button {
+    grid-column-start: 4;
+  }
+  button#toggleButton {
+    padding: 0.2rem 0.5rem;
+    line-height: 80%;
+  }
+  .contact-form-container .name-email,
+  .contact-form-container .budget-timeline-etc {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+    align-items: center;
+  }
+  .popup-menu p {
+    font-size: 1.4rem;
   }
 }
 /*------------------------------------
@@ -899,24 +1033,6 @@ ul div.mob-footer-4 {
     grid-column-end: 7;
   }
 }
-.overlay.hidden {
-  display: none;
-  transform: translateY(-50%);
-  opacity: 0; /*  opacity property for fade effect */
-  transition: transform 0.3s ease; /*  transition for opacity */
-}
-
-/* Default state (when element is not hidden) */
-#popup-menu {
-  transform: translateY(0);
-  transition: transform 0.3s linear;
-}
-
-/* Apply hidden styles when the element has the hidden class */
-.hidden {
-  display: none;
-}
-
 /*---------*CUSTOM CURSOR 
 --------------------------------------*/
 body * {
